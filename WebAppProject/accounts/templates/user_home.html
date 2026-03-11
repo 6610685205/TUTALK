@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!-- Navigation Bar with Post Form in Center -->
+    <!-- Navigation Bar -->
     <header class="navbar">
         <a href="{% url 'user_home' %}" class="logo">TUTALK</a>
         <div class="nav-links">
@@ -20,7 +20,7 @@
         </div>
     </header>
 
-     <!-- Left Menu with Search Bar -->
+     <!-- Left Menu  -->
 
      <div class="left-menu">
         <a href="{% url 'tu_talk:post_list' %}"
@@ -41,7 +41,7 @@
         </a>
     </div>
     
-        <!-- Main Content Centered -->
+        <!-- Main Content  -->
     <div class="main-content">
         <div class="alerts">
             {% for alert in alerts %}
@@ -67,7 +67,7 @@
             <p>{{ post.created_at|date:"d M Y, H:i" }}</p> <!-- Formatting the date -->
             
             <p>Likes: {{ post.likes.count }} | <a href="{% url 'tu_talk:like_post' post.id %}">Like</a></p>
-            <!-- Display 3 newest comments -->
+            <!--  3 newest comments -->
             <h4>Comments:</h4>
             {% for comment in post.comments.all %}
             <p><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</p>
